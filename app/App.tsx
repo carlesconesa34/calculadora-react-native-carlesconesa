@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  titol: { color: '#5eead4', fontSize: 28, fontWeight: 'bold' },
+  titol: { color: '#ff6600', fontSize: 28, fontWeight: 'bold' },
   text: { color: '#f8fafc', fontSize: 16, marginTop: 12 },
 });
