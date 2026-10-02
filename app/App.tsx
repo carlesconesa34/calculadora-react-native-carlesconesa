@@ -6,8 +6,8 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.contenidor}>
-        <Text style={styles.titol}>La meva calculadora</Text>
-        <Text style={styles.text}>Comencem amb React Native!</Text>
+        <Text style={styles.titol}>My calculator</Text>
+        <Text style={styles.text}>Let's get into it!</Text>
         <StatusBar style="light" />
       </SafeAreaView>
     </SafeAreaProvider>
