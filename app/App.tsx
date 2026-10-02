@@ -1,26 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.contenidor}>
-        <Text style={styles.titol}>My calculator</Text>
-        <Text style={styles.text}>Let's get into it!</Text>
-        <StatusBar style="light" />
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View>
+      <Text>Calculadora</Text>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  contenidor: {
-    flex: 1,
-    backgroundColor: '#0b1220',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  titol: { color: '#ff6600', fontSize: 28, fontWeight: 'bold' },
-  text: { color: '#f8fafc', fontSize: 16, marginTop: 12 },
-});
