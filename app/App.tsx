@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 const files = [
   ['AC', '±', '%', '÷'],
@@ -39,12 +39,23 @@ export default function App() {
     <View style={{ padding: 20, marginTop: 40 }}>
       <Text>Calculadora</Text>
       <Text>{pantalla}</Text>
-      <Pressable
-        onPress={() => premTecla('7')}
-        style={{ backgroundColor: '#dddddd', padding: 14 }}
-      >
-        <Text>7</Text>
-      </Pressable>
+      {files.map((fila, index) => (
+      <View key={index} style={styles.fila}>
+        {fila.map((tecla) => (
+          <Pressable
+            key={tecla}
+            onPress={() => premTecla(tecla)}
+            style={{ flex: 1, backgroundColor: '#dddddd', padding: 14 }}
+          >
+            <Text style={{ textAlign: 'center', fontSize: 22 }}>{tecla}</Text>
+          </Pressable>
+        ))}
+      </View>
+))}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  fila: { flexDirection: 'row', gap: 8, marginBottom: 8 },
+});
