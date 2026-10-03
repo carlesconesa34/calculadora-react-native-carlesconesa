@@ -3,6 +3,7 @@ import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import BotoCalculadora from "./src/components/BotoCalculadora";
+import PantallaCalculadora from "./src/components/PantallaCalculadora";
 
 const files = [
   ["AC", "±", "%", "÷"],
@@ -43,11 +44,7 @@ export default function App() {
         <View style={styles.contingut}>
           <View style={styles.calculadora}>
             <Text style={styles.titol}>Calculadora</Text>
-            <Text
-              style={{ fontSize: 32, textAlign: "right", marginBottom: 12 }}
-            >
-              {pantalla}
-            </Text>
+            <PantallaCalculadora valor={pantalla} operacio="" />
             {files.map((fila, index) => (
               <View key={index} style={styles.fila}>
                 {fila.map((tecla) => (

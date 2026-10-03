@@ -14,6 +14,6 @@ export default function BotoCalculadora({ text, onPress }: Props) {
 }
 
 const styles = StyleSheet.create({
-  boto: { flex: 1, backgroundColor: "#dddddd", padding: 14 },
-  text: { textAlign: "center", fontSize: 22 },
+  boto: { flex: 1, backgroundColor: "#3d3d3d", padding: 14 },
+  text: { textAlign: "center", color: "#ffffff", fontSize: 22 },
 });
