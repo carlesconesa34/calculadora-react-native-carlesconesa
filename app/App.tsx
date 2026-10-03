@@ -1,7 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import BotoCalculadora from "./src/components/BotoCalculadora";
 
 const files = [
   ["AC", "±", "%", "÷"],
@@ -50,15 +51,11 @@ export default function App() {
             {files.map((fila, index) => (
               <View key={index} style={styles.fila}>
                 {fila.map((tecla) => (
-                  <Pressable
+                  <BotoCalculadora
                     key={tecla}
+                    text={tecla}
                     onPress={() => premTecla(tecla)}
-                    style={{ flex: 1, backgroundColor: "#dddddd", padding: 14 }}
-                  >
-                    <Text style={{ textAlign: "center", fontSize: 22 }}>
-                      {tecla}
-                    </Text>
-                  </Pressable>
+                  />
                 ))}
               </View>
             ))}
