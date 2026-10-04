@@ -18,15 +18,15 @@ export function aplicaTecla(
   estat: EstatCalculadora,
   tecla: string,
 ): EstatCalculadora {
+  if (tecla === ".") {
+    const base = estat.novaEntrada ? "0" : estat.pantalla;
+    if (base.includes(".")) return estat;
+    return { ...estat, pantalla: base + ".", novaEntrada: false };
+  }
   if (tecla === "AC") return { ...estatInicial };
   if (/^[0-9]$/.test(tecla)) {
     const base = estat.novaEntrada ? "0" : estat.pantalla;
     if (base.replace(/[^0-9]/g, "").length >= 12) return estat;
-    if (tecla === ".") {
-      const base = estat.novaEntrada ? "0" : estat.pantalla;
-      if (base.includes(".")) return estat;
-      return { ...estat, pantalla: base + ".", novaEntrada: false };
-    }
     return {
       ...estat,
       pantalla: base === "0" ? tecla : base + tecla,
