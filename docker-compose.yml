@@ -1,6 +1,6 @@
 services:
   web:
-    image: node:24-alpine
+    build: .
     working_dir: /app
     ports:
       - "8081:8081"
@@ -12,7 +12,6 @@ services:
       CHOKIDAR_USEPOLLING: "true"
     stdin_open: true
     tty: true
-    command: npm run web -- --host lan
 
 volumes:
   node_modules:
